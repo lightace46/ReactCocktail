@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const ListCocktail = () => {
-  const [cocktails, setCocktail] = useState([]);
+  const [cocktails, setCocktail] = useState(null);
 
   if (cocktails.length === 0) {
     fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a")
@@ -9,7 +9,7 @@ const ListCocktail = () => {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
+        setCocktail(data);
       });
   }
 
