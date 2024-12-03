@@ -1,17 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const ListCocktail = () => {
   const [cocktails, setCocktail] = useState(null);
 
-  if (cocktails.length === 0) {
+  useEffect(() => {
     fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a")
       .then((response) => {
         return response.json();
       })
       .then((data) => {
-        setCocktail(data);
+        setCocktail(data.drinks);
       });
-  }
+  }, []);
+
+  console.log(cocktails);
 
   return (
     <>
