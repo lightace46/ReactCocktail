@@ -9,15 +9,32 @@ const ListCocktail = () => {
         return response.json();
       })
       .then((data) => {
-        setCocktail(data.drinks);
+        const lastCocktails = data.drinks.slice(0, 10);
+        setCocktail(lastCocktails);
       });
   }, []);
 
-  console.log(cocktails);
+  if (!cocktails) {
+    return <p>Cocktails en chargement</p>;
+  }
 
   return (
     <>
-      <p>Liste des cocktails</p>
+      <section>
+        <p>Liste des cocktails</p>
+        {cocktails.map((cocktail) => {
+          return (
+            <article key={cocktail.idDrink}>
+              <p>{cocktail.strDrink}</p>
+              <img
+                width={"100px"}
+                src={cocktail.strDrinkThumb}
+                alt={cocktail.strDrink}
+              />
+            </article>
+          );
+        })}
+      </section>
     </>
   );
 };
