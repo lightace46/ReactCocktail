@@ -10,8 +10,7 @@ const FetchCokctail = ({ url }) => {
         return response.json();
       })
       .then((data) => {
-        const lastCocktails = data.drinks.slice(0, 10);
-        setCocktail(lastCocktails);
+        setCocktail(data.drinks);
       });
   }, []);
 
