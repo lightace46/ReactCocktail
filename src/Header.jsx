@@ -1,4 +1,4 @@
-const Header = () => {
+const Header = ({ userName }) => {
   return (
     <>
       <header>
@@ -9,6 +9,7 @@ const Header = () => {
             </li>
           </ul>
         </nav>
+        <p>{userName}</p>
       </header>
     </>
   );

@@ -1,8 +1,8 @@
-function Footer() {
+function Footer({ userName }) {
   return (
     <>
       <footer>
-        <p>&copy; Copyright apala</p>
+        <p>&copy; Copyright {userName}</p>
       </footer>
     </>
   );

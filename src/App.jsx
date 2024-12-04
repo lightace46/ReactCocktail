@@ -5,13 +5,14 @@ import ListCocktail from "./ListCocktail";
 import RandomCocktail from "./RandomCockctail";
 
 function App() {
+  const userName = "Mehmet Minnet";
   return (
     <>
-      <Header />
+      <Header userName={userName} />
       <h1>Cocktail</h1>
       <ListCocktail />
       <RandomCocktail />
-      <Footer />
+      <Footer userName={userName} />
     </>
   );
 }

@@ -1,4 +1,6 @@
+/* eslint-disable react/jsx-key */
 import { useEffect, useState } from "react";
+import CocktailCard from "./CocktailCard";
 
 const ListCocktail = () => {
   const [cocktails, setCocktail] = useState(null);
@@ -23,16 +25,7 @@ const ListCocktail = () => {
       <section>
         <p>Liste des cocktails</p>
         {cocktails.map((cocktail) => {
-          return (
-            <article key={cocktail.idDrink}>
-              <p>{cocktail.strDrink}</p>
-              <img
-                width={"100px"}
-                src={cocktail.strDrinkThumb}
-                alt={cocktail.strDrink}
-              />
-            </article>
-          );
+          return <CocktailCard cocktail={cocktail} />;
         })}
       </section>
     </>
