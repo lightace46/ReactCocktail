@@ -19,7 +19,6 @@ const RandomCocktail = () => {
   }, []);
 
   const handleClick = () => {
-    //setPokemons([]); //bonne réponse aussi
     fetchCokctail();
   };
 
